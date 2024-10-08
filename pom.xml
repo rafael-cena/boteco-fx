@@ -36,7 +36,14 @@
       <artifactId>junit-jupiter-engine</artifactId>
       <version>${junit.version}</version>
       <scope>test</scope>
-    </dependency>  </dependencies>
+    </dependency>
+    <dependency>
+      <groupId>org.postgresql</groupId>
+      <artifactId>postgresql</artifactId>
+      <version>42.2.15</version>
+    </dependency>
+
+  </dependencies>
 
   <build>
     <plugins>
@@ -58,7 +65,7 @@
             <!-- Default configuration for running with: mvn clean javafx:run -->
             <id>default-cli</id>
             <configuration>
-              <mainClass>com.example.botecofx/com.example.botecofx.HelloApplication</mainClass>
+              <mainClass>com.example.botecofx/com.example.botecofx.BotecoFX</mainClass>
               <launcher>app</launcher>
               <jlinkZipName>app</jlinkZipName>
               <jlinkImageName>app</jlinkImageName>
