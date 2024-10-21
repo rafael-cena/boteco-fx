@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+
+<GridPane hgap="20.0" prefHeight="480.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.botecofx.GarconTableController">
+   <columnConstraints>
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="25.0" />
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="25.0" />
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="25.0" />
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="25.0" />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+   </rowConstraints>
+   <children>
+      <VBox alignment="CENTER_LEFT">
+         <children>
+            <Label text="ID" />
+            <TextField fx:id="tfId" />
+         </children>
+      </VBox>
+      <VBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="10.0" GridPane.columnSpan="4" GridPane.rowIndex="1">
+         <children>
+            <Label text="NOME" />
+            <TextField fx:id="tfNome" />
+         </children>
+      </VBox>
+      <VBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="94.0" GridPane.columnSpan="4" GridPane.rowIndex="2">
+         <children>
+            <Label text="CPF" />
+            <TextField fx:id="tfCpf" />
+         </children>
+      </VBox>
+      <VBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="170.0" GridPane.rowIndex="3">
+         <children>
+            <Label text="CEP" />
+            <TextField fx:id="tfCep" />
+         </children>
+      </VBox>
+      <VBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="238.0" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="3">
+         <children>
+            <Label text="ENDEREÇO (RUA/AVENIDA)" />
+            <TextField fx:id="tfEndereco" />
+         </children>
+      </VBox>
+      <VBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="10.0" GridPane.columnIndex="3" GridPane.rowIndex="3">
+         <children>
+            <Label text="NÚMERO" />
+            <TextField fx:id="tfNum" />
+         </children>
+      </VBox>
+      <VBox alignment="CENTER_LEFT" layoutX="453.0" layoutY="238.0" GridPane.columnSpan="3" GridPane.rowIndex="4">
+         <children>
+            <Label text="CIDADE" />
+            <TextField fx:id="tfNum1" />
+         </children>
+      </VBox>
+      <VBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="298.0" GridPane.columnIndex="3" GridPane.rowIndex="4">
+         <children>
+            <Label text="UF" />
+            <TextField fx:id="tfNum11" />
+         </children>
+      </VBox>
+      <VBox alignment="CENTER_LEFT" layoutX="421.0" layoutY="298.0" GridPane.columnSpan="2" GridPane.rowIndex="5">
+         <children>
+            <Label text="UF" />
+            <TextField fx:id="tfNum111" />
+         </children>
+      </VBox>
+      <VBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="350.0" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.rowIndex="5">
+         <children>
+            <Label text="UF" />
+            <TextField fx:id="tfNum1111" />
+         </children>
+      </VBox>
+      <HBox alignment="BOTTOM_RIGHT" spacing="20.0" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.rowIndex="6">
+         <children>
+            <Button minWidth="120.0" mnemonicParsing="false" prefWidth="120.0" text="Confirmar" />
+            <Button minWidth="120.0" mnemonicParsing="false" prefWidth="120.0" text="Cancelar" />
+         </children>
+      </HBox>
+   </children>
+   <padding>
+      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+   </padding>
+</GridPane>

@@ -7,7 +7,6 @@
 <?import javafx.scene.input.KeyCodeCombination?>
 <?import javafx.scene.layout.BorderPane?>
 
-
 <BorderPane minHeight="400.0" minWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.botecofx.AdmController">
    <top>
       <MenuBar BorderPane.alignment="CENTER">
@@ -18,7 +17,7 @@
                   <MenuItem text="_CATEGORIA" />
                   <MenuItem text="_UNIDADE" />
                   <MenuItem text="_TIPO DE PAGAMENTO" />
-                  <MenuItem text="_GARÇON" />
+                  <MenuItem onAction="#onCadGarcon" text="_GARÇON..." />
                   <SeparatorMenuItem mnemonicParsing="false" />
                   <MenuItem text="_FECHAR" />
             </items>

@@ -19,6 +19,7 @@ public class BotecoFX extends Application {
         FXMLLoader fxmlLoader = new FXMLLoader(BotecoFX.class.getResource("adm-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 320, 240);
         stage.setTitle("BotecoFX!");
+        stage.setMaximized(true);
         stage.setScene(scene);
         stage.show();
     }
