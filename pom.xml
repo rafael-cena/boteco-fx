@@ -49,6 +49,12 @@
       <version>20220320</version>
     </dependency>
 
+    <dependency>
+      <groupId>org.openjfx</groupId>
+      <artifactId>javafx-swing</artifactId>
+      <version>20.0.2</version>
+    </dependency>
+
   </dependencies>
 
   <build>

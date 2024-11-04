@@ -5,20 +5,29 @@ import com.example.botecofx.db.entidades.Garcon;
 import com.example.botecofx.db.util.SingletonDB;
 import com.example.botecofx.util.ApisService;
 import javafx.application.Platform;
+import javafx.embed.swing.SwingFXUtils;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.input.MouseEvent;
+import javafx.stage.FileChooser;
 import org.json.JSONObject;
 
+import java.awt.image.BufferedImage;
+import java.io.File;
 import java.net.URL;
+import java.nio.Buffer;
 import java.util.ResourceBundle;
 
 public class GarconFormController implements Initializable {
 
+    public ImageView imageView;
     @FXML
     private Button btCancelar;
 
@@ -51,6 +60,7 @@ public class GarconFormController implements Initializable {
 
     @FXML
     private TextField tfUf;
+    private File file = null;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -75,6 +85,9 @@ public class GarconFormController implements Initializable {
             tfCidade.setText(gAux.getCidade());
             tfUf.setText(gAux.getUf());
             tfFone.setText(gAux.getFone());
+            BufferedImage bufferedImage;
+            bufferedImage=SingletonDB.getConexao().carregarImagem("garcon", "gar_foto", "gar_id", gAux.getId());
+            imageView.setImage(SwingFXUtils.toFXImage(bufferedImage,null));
         }
 
     }
@@ -88,7 +101,7 @@ public class GarconFormController implements Initializable {
     void onConfirmar(ActionEvent event) {
         Garcon garcon = new Garcon(tfNome.getText(), tfCpf.getText(), tfCep.getText(),
             tfNumero.getText(), tfEndereco.getText(), tfCidade.getText(), tfUf.getText(), tfFone.getText());
-        if (!new GarconDAL().gravar(garcon)) {
+        if (!new GarconDAL().gravar(garcon, file)) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Erro ao gravar o Garçon");
             alert.setContentText("Erro: "+ SingletonDB.getConexao().getMensagemErro());
@@ -105,6 +118,15 @@ public class GarconFormController implements Initializable {
             tfEndereco.setText(json.getString("logradouro"));
             tfUf.setText(json.getString("uf"));
             tfNumero.requestFocus();
+        }
+    }
+
+    public void onBuscarImagem (MouseEvent mouseEvent) {
+        FileChooser fileChooser = new FileChooser();
+        file = fileChooser.showOpenDialog(null);
+        if (file != null) {
+            Image image = new Image(file.toURI().toString());
+            imageView.setImage(image);
         }
     }
 }

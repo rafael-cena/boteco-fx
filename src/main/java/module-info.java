@@ -5,6 +5,7 @@ module com.example.botecofx {
     requires java.desktop;
     requires java.logging;
     requires org.json;
+    requires javafx.swing;
 
 
     opens com.example.botecofx to javafx.fxml;
